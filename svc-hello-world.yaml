@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: world
+  name: svc-hello-world
+spec:
+  ports:
+  - name: svc-hello-world
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: world
+  type: ClusterIP
