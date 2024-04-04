@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dima
+  name: hellow-dima
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dima
+  template:
+    metadata:
+      labels:
+        app: dima
+    spec:
+      containers:
+      - image: korgala/hello-dima
+        name: hello-dima
+        ports:
+        - containerPort: 80
