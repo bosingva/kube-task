@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: world
+  name: hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: world
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: world
+    spec:
+      containers:
+      - image: korgala/hello-world
+        name: hello-world
+        ports:
+        - containerPort: 80
